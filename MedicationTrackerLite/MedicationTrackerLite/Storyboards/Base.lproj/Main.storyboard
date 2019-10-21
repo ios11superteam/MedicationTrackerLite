@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UNx-hI-UxR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UNx-hI-UxR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -154,17 +154,17 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days Taken:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGY-YD-UZG">
+                                                <rect key="frame" x="0.0" y="124.5" width="96" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="OSV-lN-a1h">
-                                                <rect key="frame" x="0.0" y="124.5" width="320.5" height="111"/>
+                                                <rect key="frame" x="0.0" y="157" width="320.5" height="212.5"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Days Taken:" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGY-YD-UZG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320.5" height="20.5"/>
-                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="yfU-gp-Ki7">
-                                                        <rect key="frame" x="0.0" y="44.5" width="320.5" height="66.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="320.5" height="212.5"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="fXW-Ob-Hkm">
                                                                 <rect key="frame" x="0.0" y="0.0" width="20" height="54.5"/>
@@ -298,19 +298,26 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Medicine Instructions:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="laa-Jx-hd9">
-                                                <rect key="frame" x="0.0" y="247.5" width="178" height="20.5"/>
+                                                <rect key="frame" x="0.0" y="381.5" width="178" height="20.5"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Input your medicines information in here" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xzw-DB-Af0">
-                                                <rect key="frame" x="0.0" y="280" width="333" height="262"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Zsn-99-qkx">
+                                                <rect key="frame" x="0.0" y="414" width="334" height="128"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="Zsn-99-qkx" firstAttribute="leading" secondItem="HvW-u1-uCc" secondAttribute="leading" id="3Gz-cD-9Rf"/>
+                                            <constraint firstAttribute="trailing" secondItem="Zsn-99-qkx" secondAttribute="trailing" id="ILz-Sh-pSq"/>
+                                            <constraint firstItem="Zsn-99-qkx" firstAttribute="top" secondItem="laa-Jx-hd9" secondAttribute="bottom" constant="12" id="lix-2q-4kl"/>
+                                            <constraint firstAttribute="bottom" secondItem="Zsn-99-qkx" secondAttribute="bottom" id="mW1-9T-Yh3"/>
+                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
@@ -333,7 +340,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="fridayButton" destination="3bJ-fS-f6r" id="iKs-QB-Ese"/>
-                        <outlet property="instructionsTextField" destination="xzw-DB-Af0" id="ljM-Ky-Ygf"/>
                         <outlet property="medicationName" destination="nwi-0Z-f2Y" id="yLi-s5-lFG"/>
                         <outlet property="mondayButton" destination="RkC-Ip-fze" id="wOT-eH-Gyn"/>
                         <outlet property="numberofPills" destination="hye-fc-5hA" id="AOF-K6-Sb4"/>
@@ -368,7 +374,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="circle" catalog="system" width="64" height="60"/>
+        <image name="circle" catalog="system" width="64" height="62"/>
         <image name="unchecked" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>

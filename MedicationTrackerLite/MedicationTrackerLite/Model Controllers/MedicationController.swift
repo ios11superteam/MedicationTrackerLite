@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+class MedicationController {
+    var medications: [Medication] = []
+    var mondaySelected: [Medication] {
+        return medications.filter { $0.takenMonday == true}
+}
+}
