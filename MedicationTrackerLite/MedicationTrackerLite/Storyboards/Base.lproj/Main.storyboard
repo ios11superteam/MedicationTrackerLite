@@ -10,7 +10,7 @@
         <!--Medication Tracker Lite-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MedicationTrackerLite" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MedicationViewController" customModule="MedicationTrackerLite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="196" width="414" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MedicationCell" rowHeight="80" id="7fo-fu-xWG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MedicationCell" rowHeight="80" id="7fo-fu-xWG" customClass="MedicationTableViewCell" customModule="MedicationTrackerLite" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7fo-fu-xWG" id="qLd-qw-qeH">
@@ -58,6 +58,9 @@
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKm-xs-QSR">
                                                                     <rect key="frame" x="0.0" y="0.0" width="34" height="53"/>
                                                                     <state key="normal" title="Refill"/>
+                                                                    <connections>
+                                                                        <action selector="refillButtonTapped:" destination="7fo-fu-xWG" eventType="touchUpInside" id="H1A-Dt-jvg"/>
+                                                                    </connections>
                                                                 </button>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2V-SX-QJ5">
                                                                     <rect key="frame" x="94" y="0.0" width="53" height="53"/>
@@ -65,6 +68,9 @@
                                                                         <constraint firstAttribute="width" secondItem="z2V-SX-QJ5" secondAttribute="height" multiplier="1:1" id="mCz-uP-Tpi"/>
                                                                     </constraints>
                                                                     <state key="normal" title="Button" image="unchecked"/>
+                                                                    <connections>
+                                                                        <action selector="takenButtonTapped:" destination="7fo-fu-xWG" eventType="touchUpInside" id="pHk-Cv-qiw"/>
+                                                                    </connections>
                                                                 </button>
                                                             </subviews>
                                                         </stackView>
@@ -79,6 +85,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="medicationNameLabel" destination="TIx-hz-kHB" id="yfY-a6-R2e"/>
+                                            <outlet property="pillCountLabel" destination="m9G-QH-o1M" id="WwG-s0-P3N"/>
+                                            <outlet property="takenButton" destination="z2V-SX-QJ5" id="7UN-n8-aIj"/>
                                             <segue destination="fbM-pZ-qWK" kind="show" identifier="DetailMedSegue" id="ieK-KM-Bhj"/>
                                         </connections>
                                     </tableViewCell>
@@ -105,6 +114,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dateLabel" destination="5cP-9t-jQT" id="UjY-ix-Goh"/>
+                        <outlet property="medicationTableView" destination="Ijo-if-aqT" id="CL5-MQ-VVr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,7 +126,7 @@
         <!--Add Medication-->
         <scene sceneID="5er-IL-lbU">
             <objects>
-                <viewController id="fbM-pZ-qWK" sceneMemberID="viewController">
+                <viewController id="fbM-pZ-qWK" customClass="AddDetailViewController" customModule="MedicationTrackerLite" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mpj-Ak-ndY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,6 +179,9 @@
                                                                         <rect key="frame" x="0.0" y="32.5" width="20" height="22"/>
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                         <state key="normal" image="circle" catalog="system"/>
+                                                                        <connections>
+                                                                            <action selector="sundayTapped:" destination="fbM-pZ-qWK" eventType="touchUpInside" id="9OI-EF-c09"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -181,6 +197,9 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RkC-Ip-fze">
                                                                         <rect key="frame" x="0.0" y="32.5" width="20" height="22"/>
                                                                         <state key="normal" image="circle" catalog="system"/>
+                                                                        <connections>
+                                                                            <action selector="mondayTapped:" destination="fbM-pZ-qWK" eventType="touchUpInside" id="isD-Dq-P7Y"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -196,6 +215,9 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vMT-zv-XC0">
                                                                         <rect key="frame" x="0.0" y="32.5" width="20" height="22"/>
                                                                         <state key="normal" image="circle" catalog="system"/>
+                                                                        <connections>
+                                                                            <action selector="tuesdayTapped:" destination="fbM-pZ-qWK" eventType="touchUpInside" id="kXJ-6t-rtF"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -211,6 +233,9 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bd4-oL-igh">
                                                                         <rect key="frame" x="0.0" y="32.5" width="20" height="22"/>
                                                                         <state key="normal" image="circle" catalog="system"/>
+                                                                        <connections>
+                                                                            <action selector="wednesdayTapped:" destination="fbM-pZ-qWK" eventType="touchUpInside" id="TCP-Fu-Ku8"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -226,6 +251,9 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zlf-LU-s7s">
                                                                         <rect key="frame" x="0.0" y="32.5" width="20.5" height="22"/>
                                                                         <state key="normal" image="circle" catalog="system"/>
+                                                                        <connections>
+                                                                            <action selector="thursdayTapped:" destination="fbM-pZ-qWK" eventType="touchUpInside" id="kri-FZ-6vj"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -241,6 +269,9 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bJ-fS-f6r">
                                                                         <rect key="frame" x="0.0" y="32.5" width="20" height="22"/>
                                                                         <state key="normal" image="circle" catalog="system"/>
+                                                                        <connections>
+                                                                            <action selector="fridayTapped:" destination="fbM-pZ-qWK" eventType="touchUpInside" id="iF5-Ir-ev5"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -256,6 +287,9 @@
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ds-Se-45H">
                                                                         <rect key="frame" x="0.0" y="32.5" width="20" height="22"/>
                                                                         <state key="normal" image="circle" catalog="system"/>
+                                                                        <connections>
+                                                                            <action selector="saturdayTapped:" destination="fbM-pZ-qWK" eventType="touchUpInside" id="utP-yv-oDx"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -291,8 +325,24 @@
                         <viewLayoutGuide key="safeArea" id="3LS-bT-hnz"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add Medication" id="pKH-9a-D0Y">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="nJB-MF-VCB"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="nJB-MF-VCB">
+                            <connections>
+                                <action selector="savebuttonTapped:" destination="fbM-pZ-qWK" id="SBl-oj-1q5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="fridayButton" destination="3bJ-fS-f6r" id="iKs-QB-Ese"/>
+                        <outlet property="instructionsTextField" destination="xzw-DB-Af0" id="ljM-Ky-Ygf"/>
+                        <outlet property="medicationName" destination="nwi-0Z-f2Y" id="yLi-s5-lFG"/>
+                        <outlet property="mondayButton" destination="RkC-Ip-fze" id="wOT-eH-Gyn"/>
+                        <outlet property="numberofPills" destination="hye-fc-5hA" id="AOF-K6-Sb4"/>
+                        <outlet property="saturdayButton" destination="9Ds-Se-45H" id="U9h-yZ-Cbc"/>
+                        <outlet property="sundayButton" destination="ZPG-2E-7CO" id="N6J-bb-B0N"/>
+                        <outlet property="thursdayButton" destination="Zlf-LU-s7s" id="VER-nQ-NAW"/>
+                        <outlet property="tuesdayButton" destination="vMT-zv-XC0" id="K0w-vH-Snk"/>
+                        <outlet property="wednesdayButton" destination="bd4-oL-igh" id="DnQ-94-yOV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pzk-Ev-Z8L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
