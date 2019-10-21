@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		95F8984E235E196000FDC080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8984D235E196000FDC080 /* AppDelegate.swift */; };
+		95F89850235E196000FDC080 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8984F235E196000FDC080 /* SceneDelegate.swift */; };
+		95F89855235E196000FDC080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F89853235E196000FDC080 /* Main.storyboard */; };
+		95F89857235E196200FDC080 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95F89856235E196200FDC080 /* Assets.xcassets */; };
+		95F8985A235E196200FDC080 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F89858235E196200FDC080 /* LaunchScreen.storyboard */; };
+		95F89865235E196200FDC080 /* MedicationTrackerLiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F89864235E196200FDC080 /* MedicationTrackerLiteTests.swift */; };
+		95F89870235E196200FDC080 /* MedicationTrackerLiteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8986F235E196200FDC080 /* MedicationTrackerLiteUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		95F89861235E196200FDC080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95F89842235E196000FDC080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95F89849235E196000FDC080;
+			remoteInfo = MedicationTrackerLite;
+		};
+		95F8986C235E196200FDC080 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 95F89842235E196000FDC080 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95F89849235E196000FDC080;
+			remoteInfo = MedicationTrackerLite;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		95F8984A235E196000FDC080 /* MedicationTrackerLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicationTrackerLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		95F8984D235E196000FDC080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		95F8984F235E196000FDC080 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		95F89854235E196000FDC080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		95F89856235E196200FDC080 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		95F89859235E196200FDC080 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		95F8985B235E196200FDC080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95F89860235E196200FDC080 /* MedicationTrackerLiteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedicationTrackerLiteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95F89864235E196200FDC080 /* MedicationTrackerLiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTrackerLiteTests.swift; sourceTree = "<group>"; };
+		95F89866235E196200FDC080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95F8986B235E196200FDC080 /* MedicationTrackerLiteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MedicationTrackerLiteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		95F8986F235E196200FDC080 /* MedicationTrackerLiteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTrackerLiteUITests.swift; sourceTree = "<group>"; };
+		95F89871235E196200FDC080 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		95F89847235E196000FDC080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F8985D235E196200FDC080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F89868235E196200FDC080 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		95F89841235E196000FDC080 = {
+			isa = PBXGroup;
+			children = (
+				95F8984C235E196000FDC080 /* MedicationTrackerLite */,
+				95F89863235E196200FDC080 /* MedicationTrackerLiteTests */,
+				95F8986E235E196200FDC080 /* MedicationTrackerLiteUITests */,
+				95F8984B235E196000FDC080 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		95F8984B235E196000FDC080 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				95F8984A235E196000FDC080 /* MedicationTrackerLite.app */,
+				95F89860235E196200FDC080 /* MedicationTrackerLiteTests.xctest */,
+				95F8986B235E196200FDC080 /* MedicationTrackerLiteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		95F8984C235E196000FDC080 /* MedicationTrackerLite */ = {
+			isa = PBXGroup;
+			children = (
+				95F8984D235E196000FDC080 /* AppDelegate.swift */,
+				95F8984F235E196000FDC080 /* SceneDelegate.swift */,
+				95F89853235E196000FDC080 /* Main.storyboard */,
+				95F89856235E196200FDC080 /* Assets.xcassets */,
+				95F89858235E196200FDC080 /* LaunchScreen.storyboard */,
+				95F8985B235E196200FDC080 /* Info.plist */,
+			);
+			path = MedicationTrackerLite;
+			sourceTree = "<group>";
+		};
+		95F89863235E196200FDC080 /* MedicationTrackerLiteTests */ = {
+			isa = PBXGroup;
+			children = (
+				95F89864235E196200FDC080 /* MedicationTrackerLiteTests.swift */,
+				95F89866235E196200FDC080 /* Info.plist */,
+			);
+			path = MedicationTrackerLiteTests;
+			sourceTree = "<group>";
+		};
+		95F8986E235E196200FDC080 /* MedicationTrackerLiteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				95F8986F235E196200FDC080 /* MedicationTrackerLiteUITests.swift */,
+				95F89871235E196200FDC080 /* Info.plist */,
+			);
+			path = MedicationTrackerLiteUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		95F89849235E196000FDC080 /* MedicationTrackerLite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95F89874235E196200FDC080 /* Build configuration list for PBXNativeTarget "MedicationTrackerLite" */;
+			buildPhases = (
+				95F89846235E196000FDC080 /* Sources */,
+				95F89847235E196000FDC080 /* Frameworks */,
+				95F89848235E196000FDC080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MedicationTrackerLite;
+			productName = MedicationTrackerLite;
+			productReference = 95F8984A235E196000FDC080 /* MedicationTrackerLite.app */;
+			productType = "com.apple.product-type.application";
+		};
+		95F8985F235E196200FDC080 /* MedicationTrackerLiteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95F89877235E196200FDC080 /* Build configuration list for PBXNativeTarget "MedicationTrackerLiteTests" */;
+			buildPhases = (
+				95F8985C235E196200FDC080 /* Sources */,
+				95F8985D235E196200FDC080 /* Frameworks */,
+				95F8985E235E196200FDC080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95F89862235E196200FDC080 /* PBXTargetDependency */,
+			);
+			name = MedicationTrackerLiteTests;
+			productName = MedicationTrackerLiteTests;
+			productReference = 95F89860235E196200FDC080 /* MedicationTrackerLiteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		95F8986A235E196200FDC080 /* MedicationTrackerLiteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95F8987A235E196200FDC080 /* Build configuration list for PBXNativeTarget "MedicationTrackerLiteUITests" */;
+			buildPhases = (
+				95F89867235E196200FDC080 /* Sources */,
+				95F89868235E196200FDC080 /* Frameworks */,
+				95F89869235E196200FDC080 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				95F8986D235E196200FDC080 /* PBXTargetDependency */,
+			);
+			name = MedicationTrackerLiteUITests;
+			productName = MedicationTrackerLiteUITests;
+			productReference = 95F8986B235E196200FDC080 /* MedicationTrackerLiteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		95F89842235E196000FDC080 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+				ORGANIZATIONNAME = "Lambda School";
+				TargetAttributes = {
+					95F89849235E196000FDC080 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					95F8985F235E196200FDC080 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 95F89849235E196000FDC080;
+					};
+					95F8986A235E196200FDC080 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 95F89849235E196000FDC080;
+					};
+				};
+			};
+			buildConfigurationList = 95F89845235E196000FDC080 /* Build configuration list for PBXProject "MedicationTrackerLite" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 95F89841235E196000FDC080;
+			productRefGroup = 95F8984B235E196000FDC080 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				95F89849235E196000FDC080 /* MedicationTrackerLite */,
+				95F8985F235E196200FDC080 /* MedicationTrackerLiteTests */,
+				95F8986A235E196200FDC080 /* MedicationTrackerLiteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		95F89848235E196000FDC080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F8985A235E196200FDC080 /* LaunchScreen.storyboard in Resources */,
+				95F89857235E196200FDC080 /* Assets.xcassets in Resources */,
+				95F89855235E196000FDC080 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F8985E235E196200FDC080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F89869235E196200FDC080 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		95F89846235E196000FDC080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F8984E235E196000FDC080 /* AppDelegate.swift in Sources */,
+				95F89850235E196000FDC080 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F8985C235E196200FDC080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F89865235E196200FDC080 /* MedicationTrackerLiteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95F89867235E196200FDC080 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95F89870235E196200FDC080 /* MedicationTrackerLiteUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		95F89862235E196200FDC080 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95F89849235E196000FDC080 /* MedicationTrackerLite */;
+			targetProxy = 95F89861235E196200FDC080 /* PBXContainerItemProxy */;
+		};
+		95F8986D235E196200FDC080 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95F89849235E196000FDC080 /* MedicationTrackerLite */;
+			targetProxy = 95F8986C235E196200FDC080 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		95F89853235E196000FDC080 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95F89854235E196000FDC080 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		95F89858235E196200FDC080 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95F89859235E196200FDC080 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		95F89872235E196200FDC080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		95F89873235E196200FDC080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		95F89875235E196200FDC080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MedicationTrackerLite/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.MedicationTrackerLite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		95F89876235E196200FDC080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MedicationTrackerLite/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.MedicationTrackerLite;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		95F89878235E196200FDC080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MedicationTrackerLiteTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.MedicationTrackerLiteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MedicationTrackerLite.app/MedicationTrackerLite";
+			};
+			name = Debug;
+		};
+		95F89879235E196200FDC080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MedicationTrackerLiteTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.MedicationTrackerLiteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MedicationTrackerLite.app/MedicationTrackerLite";
+			};
+			name = Release;
+		};
+		95F8987B235E196200FDC080 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MedicationTrackerLiteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.MedicationTrackerLiteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MedicationTrackerLite;
+			};
+			name = Debug;
+		};
+		95F8987C235E196200FDC080 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MedicationTrackerLiteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.MedicationTrackerLiteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = MedicationTrackerLite;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		95F89845235E196000FDC080 /* Build configuration list for PBXProject "MedicationTrackerLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95F89872235E196200FDC080 /* Debug */,
+				95F89873235E196200FDC080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95F89874235E196200FDC080 /* Build configuration list for PBXNativeTarget "MedicationTrackerLite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95F89875235E196200FDC080 /* Debug */,
+				95F89876235E196200FDC080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95F89877235E196200FDC080 /* Build configuration list for PBXNativeTarget "MedicationTrackerLiteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95F89878235E196200FDC080 /* Debug */,
+				95F89879235E196200FDC080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95F8987A235E196200FDC080 /* Build configuration list for PBXNativeTarget "MedicationTrackerLiteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95F8987B235E196200FDC080 /* Debug */,
+				95F8987C235E196200FDC080 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 95F89842235E196000FDC080 /* Project object */;
+}
