@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B238286235E516800299F21 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B238285235E516800299F21 /* Medication.swift */; };
 		95F8984E235E196000FDC080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8984D235E196000FDC080 /* AppDelegate.swift */; };
 		95F89850235E196000FDC080 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8984F235E196000FDC080 /* SceneDelegate.swift */; };
 		95F89855235E196000FDC080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F89853235E196000FDC080 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B238285235E516800299F21 /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		95F8984A235E196000FDC080 /* MedicationTrackerLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicationTrackerLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F8984D235E196000FDC080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95F8984F235E196000FDC080 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				95F8984F235E196000FDC080 /* SceneDelegate.swift */,
 				95F89853235E196000FDC080 /* Main.storyboard */,
 				95F89856235E196200FDC080 /* Assets.xcassets */,
+				4B238285235E516800299F21 /* Medication.swift */,
 				95F89858235E196200FDC080 /* LaunchScreen.storyboard */,
 				95F8985B235E196200FDC080 /* Info.plist */,
 			);
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95F8984E235E196000FDC080 /* AppDelegate.swift in Sources */,
+				4B238286235E516800299F21 /* Medication.swift in Sources */,
 				95F89850235E196000FDC080 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
