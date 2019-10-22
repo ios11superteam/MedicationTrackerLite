@@ -8,12 +8,21 @@
 
 import UIKit
 
-class MedicationTableViewController: UITableViewController {
+class MedicationTableViewController: UITableViewController, MedicationTableViewDelegate {
+    func hasBeenTaken(for cell: MedicationTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        let medication = medicationFor(indexPath)
+        medicationController.updateHasBeenTaken(for: medication)
+        tableView.reloadData()
+    }
+    
     
     let medicationController = MedicationController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        medicationController.delegate = self
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -22,7 +31,25 @@ class MedicationTableViewController: UITableViewController {
     
     func medicationFor( _ indexPath: IndexPath) -> Medication {
         if indexPath.section == 0 {
-            return medicationController.medications[indexPath.row] // Fix
+            switch medicationController.today {
+            case "Sunday":
+                return medicationController.sundaySelected[indexPath.row]
+            case "Monday":
+                return medicationController.mondaySelected[indexPath.row]
+            case "Tuesday":
+                return medicationController.tuesdaySelected[indexPath.row]
+            case "Wednesday":
+                return medicationController.wednesdaySelected[indexPath.row]
+            case "Thursday":
+                return medicationController.thursdaySelected[indexPath.row]
+            case "Friday":
+                return medicationController.fridaySelected[indexPath.row]
+            case "Saturday":
+                return medicationController.saturdaySelected[indexPath.row]
+            default:
+                return medicationController.medications[0]
+            }
+            
         } else {
             return medicationController.medications[indexPath.row]
         }
@@ -36,7 +63,25 @@ class MedicationTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-        return medicationController.medications.count // Fix this later
+            switch medicationController.today {
+            case "Sunday":
+                return medicationController.sundaySelected.count
+            case "Monday":
+                return medicationController.mondaySelected.count
+            case "Tuesday":
+                return medicationController.tuesdaySelected.count
+            case "Wednesday":
+                return medicationController.wednesdaySelected.count
+            case "Thursday":
+                return medicationController.thursdaySelected.count
+            case "Friday":
+                return medicationController.fridaySelected.count
+            case "Saturday":
+                return medicationController.saturdaySelected.count
+            default:
+                return 0
+            }
+       
         } else {
             return medicationController.medications.count
         }
@@ -115,19 +160,8 @@ class MedicationTableViewController: UITableViewController {
             
         }
         
-    
-}
+        
+        
 
-extension MedicationTableViewController: MedicationTableViewDelegate {
-    func hasBeenTaken(for cell: MedicationTableViewCell) {
-        guard let medication = cell.medication else { return }
-    
-        medicationController.hasBeenTaken(for: medication)
-        tableView.reloadData()
-    }
-    
-    
-    
-    
-}
 
+}

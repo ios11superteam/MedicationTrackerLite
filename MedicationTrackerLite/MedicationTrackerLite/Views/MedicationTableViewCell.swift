@@ -10,6 +10,8 @@ import UIKit
 
 class MedicationTableViewCell: UITableViewCell {
     
+    var delegate: MedicationTableViewDelegate?
+    
     @IBOutlet weak var medicationNameLabel: UILabel!
     @IBOutlet weak var pillCountLabel: UILabel!
     @IBOutlet weak var takenButton: UIButton!
@@ -21,29 +23,22 @@ class MedicationTableViewCell: UITableViewCell {
         }
     }
     
-    weak var delegate: MedicationTableViewDelegate?
-    
-    
     func updateViews() {
         guard let medication = medication else { return }
         medicationNameLabel.text = medication.name
-        pillCountLabel.text = String(medication.pillCount)
-        
-        
-        
-        let boxImage: String
-        if medication.hasBeenTaken {
-            boxImage = "checked"
+        pillCountLabel.text = "Tablets remaining: \(medication.pillCount)"
+        let medicationStatus = medication.hasBeenTaken
+        if medicationStatus {
+            takenButton.setImage(UIImage(named: "checked"), for: .normal)
         } else {
-            boxImage = "unchecked"
+            takenButton.setImage(UIImage(named: "unchecked"), for: .normal)
         }
-        takenButton.setImage(UIImage(named: boxImage), for: .normal)
+   
     }
      
     
     @IBAction func takenButtonTapped(_ sender: UIButton) {
         delegate?.hasBeenTaken(for: self)
-        
     }
 }
     

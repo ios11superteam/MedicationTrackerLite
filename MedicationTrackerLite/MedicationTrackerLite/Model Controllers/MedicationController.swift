@@ -12,30 +12,37 @@ class MedicationController {
     
     var delegate: MedicationTableViewController?
     
-    var medications: [Medication] = []
+    var medications: [Medication] = [] 
+    
+    var today: String {
+        getToday()
+    }
     
     var sundaySelected: [Medication] {
-        return medications.filter { $0.takenMonday == true}
+        return medications.filter { $0.takenSunday == true}
     }
     var mondaySelected: [Medication] {
         return medications.filter { $0.takenMonday == true}
     }
     var tuesdaySelected: [Medication] {
-        return medications.filter { $0.takenMonday == true}
+        return medications.filter { $0.takenTuesday == true}
     }
     var wednesdaySelected: [Medication] {
-        return medications.filter { $0.takenMonday == true}
+        return medications.filter { $0.takenWednesday == true}
     }
     var thursdaySelected: [Medication] {
-        return medications.filter { $0.takenMonday == true}
+        return medications.filter { $0.takenThursday == true}
     }
     var fridaySelected: [Medication] {
-        return medications.filter { $0.takenMonday == true}
+        return medications.filter { $0.takenFriday == true}
     }
     var saturdaySelected: [Medication] {
-        return medications.filter { $0.takenMonday == true}
+        return medications.filter { $0.takenSaturday == true}
     }
     
+    init() {
+           loadFromPersistenceStore()
+       }
     // MARK: - Methods:
     
     func create(medName: String, medInstruction: String, medPillCount: Int, takenSunday: Bool, takenMonday: Bool, takenTuesday: Bool, takenWednesday: Bool, takenThursday: Bool, takenFriday: Bool, takenSaturday: Bool) {
@@ -49,14 +56,12 @@ class MedicationController {
             
         }
     
-    func hasBeenTaken(for medication: Medication) {
-        guard let medicationIndex = medications.firstIndex(of: medication) else { return }
-        
-        medications[medicationIndex].hasBeenTaken.toggle()
-        saveToPersistentStore()
+    func updateHasBeenTaken(for medication: Medication) {
+        if let index = medications.firstIndex(of: medication) {
+            medications[index].hasBeenTaken.toggle()
+            saveToPersistentStore()
+        }
     }
-    
-    
     
     // MARK: - Persistence
     
@@ -91,6 +96,45 @@ class MedicationController {
             }
         }
     
+    // MARK: - Helper Methods
+
+    func todaysDate() -> String {
+        let date = Date()
+        let format = DateFormatter()
+        format.timeZone = TimeZone(abbreviation: "PST")
+        format.dateFormat = "MM-dd-yyyy"
+        let formattedDate = format.string(from: date)
+        return formattedDate
+     }
+    func getDayOfWeek(_ today:String) -> Int? {
+        let formatter  = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy"
+        formatter.timeZone = TimeZone(abbreviation: "PST")
+        guard let todayDate = formatter.date(from: today) else { return nil }
+        let myCalendar = Calendar(identifier: .gregorian)
+        let weekDay = myCalendar.component(.weekday, from: todayDate)
+        return weekDay
+    }
+
+    func getToday() -> String {
+       let today = todaysDate()
+        let numberDay = getDayOfWeek(today)
+        switch numberDay {
+        case 1:
+            return "Sunday"
+        case 2:
+            return "Monday"
+        case 3:
+            return "Tuesday"
+        case 4:
+            return "Wednesday"
+        case 5:
+            return "Thursday"
+        case 6:
+            return "Friday"
+        default:
+            return "Saturday"
+        }
     
-    
+    }
 }

@@ -8,9 +8,9 @@
 
 import UIKit
 
-//protocol MedicationDetailDelegate {
-////    updateViews()
-//}
+protocol MedicationDetailDelegate {
+//    updateViews()
+}
 
 class AddDetailViewController: UIViewController {
 

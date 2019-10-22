@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4B238286235E516800299F21 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B238285235E516800299F21 /* Medication.swift */; };
 		4BAE2E66235F6435003264B1 /* MedicationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE2E65235F6435003264B1 /* MedicationTableViewController.swift */; };
-		4BAE2E68235F91A9003264B1 /* MedicationTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE2E67235F91A8003264B1 /* MedicationTableViewDelegate.swift */; };
+		9569B607235F966C004900FF /* MedicationTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9569B606235F966C004900FF /* MedicationTableViewDelegate.swift */; };
 		95F8984E235E196000FDC080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8984D235E196000FDC080 /* AppDelegate.swift */; };
 		95F89850235E196000FDC080 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8984F235E196000FDC080 /* SceneDelegate.swift */; };
 		95F89855235E196000FDC080 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F89853235E196000FDC080 /* Main.storyboard */; };
@@ -42,7 +42,7 @@
 /* Begin PBXFileReference section */
 		4B238285235E516800299F21 /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
 		4BAE2E65235F6435003264B1 /* MedicationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTableViewController.swift; sourceTree = "<group>"; };
-		4BAE2E67235F91A8003264B1 /* MedicationTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTableViewDelegate.swift; sourceTree = "<group>"; };
+		9569B606235F966C004900FF /* MedicationTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTableViewDelegate.swift; sourceTree = "<group>"; };
 		95F8984A235E196000FDC080 /* MedicationTrackerLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicationTrackerLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95F8984D235E196000FDC080 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95F8984F235E196000FDC080 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				95F8988D235E562B00FDC080 /* MedicationTableViewCell.swift */,
-				4BAE2E67235F91A8003264B1 /* MedicationTableViewDelegate.swift */,
+				9569B606235F966C004900FF /* MedicationTableViewDelegate.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -319,7 +319,7 @@
 				95F8988E235E562B00FDC080 /* MedicationTableViewCell.swift in Sources */,
 				95F8988B235E55B500FDC080 /* AddDetailViewController.swift in Sources */,
 				95F89885235E552100FDC080 /* MedicationController.swift in Sources */,
-				4BAE2E68235F91A9003264B1 /* MedicationTableViewDelegate.swift in Sources */,
+				9569B607235F966C004900FF /* MedicationTableViewDelegate.swift in Sources */,
 				4BAE2E66235F6435003264B1 /* MedicationTableViewController.swift in Sources */,
 				95F89850235E196000FDC080 /* SceneDelegate.swift in Sources */,
 			);
