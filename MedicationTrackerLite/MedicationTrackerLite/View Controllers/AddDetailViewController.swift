@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol MedicationDetailDelegate {
-//    updateViews()
-}
-
 class AddDetailViewController: UIViewController {
 
     @IBOutlet weak var medicationName: UITextField!
@@ -34,7 +30,7 @@ class AddDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateViews()
         // Do any additional setup after loading the view.
     }
     
@@ -71,6 +67,8 @@ class AddDetailViewController: UIViewController {
         }
         navigationController?.popViewController(animated: true)
     }
+
+    
     
     @IBAction func sundayTapped(_ sender: UIButton) {
         sender.isSelected.toggle()
@@ -145,9 +143,36 @@ class AddDetailViewController: UIViewController {
     }
     
     
-    private func updateViews() {
+     func updateViews() {
         if let medication = medication {
-            self.navigationItem.title = medicationName.text
+            medicationName.text = medication.name
+            numberofPills.text = String(medication.pillCount)
+            instructionsTextField.text = medication.medicationInstructions
+            self.title = "Detail"
+            if medication.takenSunday {
+                sundayTapped(sundayButton)
+            }
+            if medication.takenMonday {
+                mondayTapped(mondayButton)
+            }
+            if medication.takenTuesday {
+                tuesdayTapped(tuesdayButton)
+            }
+            if medication.takenWednesday {
+                wednesdayTapped(wednesdayButton)
+            }
+            if medication.takenThursday {
+                thursdayTapped(thursdayButton)
+            }
+            if medication.takenFriday {
+                fridayTapped(fridayButton)
+            }
+            if medication.takenSaturday {
+                saturdayTapped(saturdayButton)
+            }
+            
+            
+            
             
         }
     }

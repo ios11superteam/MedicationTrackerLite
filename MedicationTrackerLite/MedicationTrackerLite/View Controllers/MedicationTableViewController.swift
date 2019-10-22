@@ -149,19 +149,16 @@ class MedicationTableViewController: UITableViewController, MedicationTableViewD
         if segue.identifier == "AddSegue" {
             if let addVC = segue.destination as? AddDetailViewController {
                 addVC.medicationController = medicationController
-            } else if segue.identifier == "DetailSegue" {
-                guard let addVC = segue.destination as? AddDetailViewController,
-                    let indexPath = tableView.indexPathForSelectedRow else { return }
-                        addVC.medication = medicationFor(indexPath)
-                    addVC.medicationController = medicationController
+            }
+        } else if segue.identifier == "DetailSegue" {
+            if let indexPath = tableView.indexPathForSelectedRow,
+                let DetailVC = segue.destination as? AddDetailViewController {
                 
-                }
+                DetailVC.medication = medicationFor(indexPath)
+                DetailVC.medicationController = medicationController
             }
             
         }
         
-        
-        
-
-
+    }
 }
