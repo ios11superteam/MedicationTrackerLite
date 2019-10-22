@@ -9,8 +9,75 @@
 import Foundation
 
 class MedicationController {
+    
     var medications: [Medication] = []
+
+    var sundaySelected: [Medication] {
+        return medications.filter { $0.takenMonday == true}
+    }
     var mondaySelected: [Medication] {
         return medications.filter { $0.takenMonday == true}
-}
+    }
+    var tuesdaySelected: [Medication] {
+        return medications.filter { $0.takenMonday == true}
+    }
+    var wednesdaySelected: [Medication] {
+        return medications.filter { $0.takenMonday == true}
+    }
+    var thursdaySelected: [Medication] {
+        return medications.filter { $0.takenMonday == true}
+    }
+    var fridaySelected: [Medication] {
+        return medications.filter { $0.takenMonday == true}
+    }
+    var saturdaySelected: [Medication] {
+        return medications.filter { $0.takenMonday == true}
+    }
+    
+    // MARK: - Methods:
+    
+    func create(medName: String, medInstruction: String, medPillCount: Int, hasBeenTaken: Bool, takenSunday: Bool, takenMonday: Bool, takenTuesday: Bool, takenWednesday: Bool, takenThursday: Bool, takenFriday: Bool, takenSaturday: Bool) {
+        let medication = Medication(name: medName, medicationInstructions: medInstruction, pillCount: medPillCount, hasBeenTaken: hasBeenTaken, takenSunday: takenSunday, takenMonday: takenMonday, takenTuesday: takenTuesday, takenWednesday: takenWednesday, takenThursday: takenThursday, takenFriday: takenFriday, takenSaturday: takenSaturday)
+        medications.append(medication)
+    }
+        
+    func update(_ medication: Medication, medName: String, medInstruction: String, medPillCount: Int, takenSunday: Bool, takenMonday: Bool, takenTuesday: Bool, takenWednesday: Bool, takenThursday: Bool, takenFriday: Bool, takenSaturday: Bool) {
+            
+        }
+    
+    // MARK: - Persistence
+    
+    private var medicationListURL: URL? {
+        let fm = FileManager.default
+        guard let dir = fm.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
+        return dir.appendingPathComponent("MedicineList.plist")
+    }
+    
+        func saveToPersistentStore() {
+            guard let url = medicationListURL else { return }
+            
+            do {
+                let encoder = PropertyListEncoder()
+                let medicineData = try encoder.encode(medications)
+                try  medicineData.write(to: url)
+            } catch {
+                print("Error loading medicine item data: \(error)")
+                
+            }
+        }
+        
+         func loadFromPersistenceStore(){
+            guard let url = medicationListURL else { return }
+            do {
+                let decoder = PropertyListDecoder()
+                let data = try Data(contentsOf: url)
+                let decodedItems = try decoder.decode([Medication].self, from: data)
+                medications = decodedItems
+            } catch {
+                print("Error loading medicine item data: \(error)")
+            }
+        }
+    
+    
+    
 }

@@ -25,10 +25,9 @@ class MedicationTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    @IBAction func refillButtonTapped(_ sender: UIButton) {
-        
-    }
     @IBAction func takenButtonTapped(_ sender: UIButton) {
         
     }
+    
+    
 }

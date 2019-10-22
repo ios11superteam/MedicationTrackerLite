@@ -22,6 +22,11 @@ class AddDetailViewController: UIViewController {
     @IBOutlet weak var thursdayButton: UIButton!
     @IBOutlet weak var fridayButton: UIButton!
     @IBOutlet weak var saturdayButton: UIButton!
+
+    var medicationController: MedicationController?
+    var medication: Medication?
+    
+    // delegate?
     
 
     @IBOutlet weak var instructionsTextField: UITextView!

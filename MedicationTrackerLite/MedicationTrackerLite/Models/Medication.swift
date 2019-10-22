@@ -8,10 +8,12 @@
 
 import Foundation
 
-struct Medication {
+struct Medication: Codable , Equatable {
+    
     var name: String
     var medicationInstructions: String
     var pillCount: Int
+    var hasBeenTaken: Bool = false
     var takenSunday: Bool = false
     var takenMonday: Bool = false
     var takenTuesday: Bool = false
