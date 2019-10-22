@@ -13,21 +13,38 @@ class MedicationTableViewCell: UITableViewCell {
     @IBOutlet weak var medicationNameLabel: UILabel!
     @IBOutlet weak var pillCountLabel: UILabel!
     @IBOutlet weak var takenButton: UIButton!
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    
+    var medication: Medication? {
+        didSet {
+            updateViews()
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    weak var delegate: MedicationTableViewDelegate?
+    
+    
+    func updateViews() {
+        guard let medication = medication else { return }
+        medicationNameLabel.text = medication.name
+        pillCountLabel.text = String(medication.pillCount)
+        
+        
+        
+        let boxImage: String
+        if medication.hasBeenTaken {
+            boxImage = "checked"
+        } else {
+            boxImage = "unchecked"
+        }
+        takenButton.setImage(UIImage(named: boxImage), for: .normal)
     }
+     
     
     @IBAction func takenButtonTapped(_ sender: UIButton) {
+        delegate?.hasBeenTaken(for: self)
         
     }
-    
-    
 }
+    
+
