@@ -14,11 +14,12 @@ class MedicationController {
     
     var medications: [Medication] = [] 
     
+//    var today = "Thursday"
     var today: String {
         getToday()
     }
     
-//    var userDate = UserDefaults.standard.set(Date(), forKey: "DateKey")
+//    var userDateExists = UserDefaults.standard.bool(forKey: "DateKey")
     
     var sundaySelected: [Medication] {
         return medications.filter { $0.takenSunday == true}
@@ -43,7 +44,13 @@ class MedicationController {
     }
     
     init() {
+//        if userDateExists {
            loadFromPersistenceStore()
+//        } else {
+//            getToday()
+//            UserDefaults.standard.set((true), forKey: "DateKey")
+//            saveToPersistentStore()
+//        }
        }
     // MARK: - Methods:
     
@@ -80,6 +87,10 @@ class MedicationController {
             }
             saveToPersistentStore()
         }
+    }
+    
+    func resetHasBeenTaken(for medication: Medication) {
+        
     }
     
     // MARK: - Persistence
@@ -155,5 +166,11 @@ class MedicationController {
             return "Saturday"
         }
     
+    }
+
+    func resetDay() {
+        for index in medications.indices {
+            medications[index].hasBeenTaken = false
+        }
     }
 }

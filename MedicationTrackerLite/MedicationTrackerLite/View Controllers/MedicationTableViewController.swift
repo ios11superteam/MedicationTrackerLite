@@ -20,11 +20,18 @@ class MedicationTableViewController: UITableViewController, MedicationTableViewD
     let medicationController = MedicationController()
 
     override func viewDidLoad() {
+        let defaults = UserDefaults.standard
+        defaults.set(medicationController.today, forKey: "day")
         super.viewDidLoad()
         medicationController.delegate = self
         
     }
     override func viewWillAppear(_ animated: Bool) {
+        let day = UserDefaults.standard.string(forKey: "day") ?? ""
+        let newDay = medicationController.getToday()
+        if newDay != day {
+            medicationController.resetDay()
+        }
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
