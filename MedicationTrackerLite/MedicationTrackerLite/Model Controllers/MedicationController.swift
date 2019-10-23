@@ -2,7 +2,7 @@
 //  MedicationController.swift
 //  MedicationTrackerLite
 //
-//  Created by Dennis Rudolph on 10/21/19.
+//  Created by Niranjan Kumar on 10/21/19.
 //  Copyright © 2019 Lambda School. All rights reserved.
 //
 
@@ -101,7 +101,11 @@ class MedicationController {
         if let index = medications.firstIndex(of: medication) {
             if medications[index].hasBeenTaken == false {
                 medications[index].hasBeenTaken.toggle()
-                medications[index].pillCount -= 1
+                if medications[index].pillCount > 0 {
+                    medications[index].pillCount -= 1
+                } else {
+                    medications[index].pillCount = 0
+                }
             } else {
                 medications[index].hasBeenTaken.toggle()
             }
@@ -188,6 +192,6 @@ class MedicationController {
             medications[index].hasBeenTaken = false
         }
     }
-    
+
     
 }

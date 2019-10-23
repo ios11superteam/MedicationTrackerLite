@@ -2,7 +2,7 @@
 //  AddDetailViewController.swift
 //  MedicationTrackerLite
 //
-//  Created by Dennis Rudolph on 10/21/19.
+//  Created by Niranjan Kumar on 10/21/19.
 //  Copyright © 2019 Lambda School. All rights reserved.
 //
 
@@ -34,6 +34,11 @@ class AddDetailViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        save()
+    }
+    
     
     private func clicked(button: UIButton) -> Bool {
         let wasClicked: Bool
@@ -47,24 +52,7 @@ class AddDetailViewController: UIViewController {
     
     
     @IBAction func savebuttonTapped(_ sender: UIBarButtonItem) {
-        guard let name = medicationName.text, !name.isEmpty else { return }
-        guard let numberString = numberofPills.text, !numberString.isEmpty else { return }
-        guard let number = Int(numberString) else { return }
-        guard let instructions = instructionsTextField.text else { return }
-        let sunday = clicked(button: sundayButton)
-        let monday = clicked(button: mondayButton)
-        let tuesday = clicked(button: tuesdayButton)
-        let wednesday = clicked(button: wednesdayButton)
-        let thursday = clicked(button: thursdayButton)
-        let friday = clicked(button: fridayButton)
-        let saturday = clicked(button: saturdayButton)
-        
-        if let medication = medication {
-            medicationController?.update(medication, medName: name, medInstruction: instructions, medPillCount: number, takenSunday: sunday, takenMonday: monday, takenTuesday: tuesday, takenWednesday: wednesday, takenThursday: thursday, takenFriday: friday, takenSaturday: saturday)
-        } else {
-            medicationController?.create(medName: name, medInstruction: instructions, medPillCount: number, takenSunday: sunday, takenMonday: monday, takenTuesday: tuesday, takenWednesday: wednesday, takenThursday: thursday, takenFriday: friday, takenSaturday: saturday)
-        }
-        navigationController?.popViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
     }
 
     
@@ -169,12 +157,30 @@ class AddDetailViewController: UIViewController {
             if medication.takenSaturday {
                 saturdayTapped(saturdayButton)
             }
-            
-            
-            
-            
         }
     }
+    
+    func save() {
+        guard let name = medicationName.text, !name.isEmpty else { return }
+        guard let numberString = numberofPills.text, !numberString.isEmpty else { return }
+        guard let number = Int(numberString) else { return }
+        guard let instructions = instructionsTextField.text else { return }
+        let sunday = clicked(button: sundayButton)
+        let monday = clicked(button: mondayButton)
+        let tuesday = clicked(button: tuesdayButton)
+        let wednesday = clicked(button: wednesdayButton)
+        let thursday = clicked(button: thursdayButton)
+        let friday = clicked(button: fridayButton)
+        let saturday = clicked(button: saturdayButton)
+        
+        if let medication = medication {
+            medicationController?.update(medication, medName: name, medInstruction: instructions, medPillCount: number, takenSunday: sunday, takenMonday: monday, takenTuesday: tuesday, takenWednesday: wednesday, takenThursday: thursday, takenFriday: friday, takenSaturday: saturday)
+        } else {
+            medicationController?.create(medName: name, medInstruction: instructions, medPillCount: number, takenSunday: sunday, takenMonday: monday, takenTuesday: tuesday, takenWednesday: wednesday, takenThursday: thursday, takenFriday: friday, takenSaturday: saturday)
+        }
+    }
+    
+    
     
     /*
     // MARK: - Navigation
