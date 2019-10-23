@@ -9,7 +9,7 @@
 import UIKit
 
 class AddDetailViewController: UIViewController {
-
+    
     @IBOutlet weak var medicationName: UITextField!
     
     @IBOutlet weak var numberofPills: UITextField!
@@ -22,10 +22,10 @@ class AddDetailViewController: UIViewController {
     @IBOutlet weak var thursdayButton: UIButton!
     @IBOutlet weak var fridayButton: UIButton!
     @IBOutlet weak var saturdayButton: UIButton!
-
+    
     var medicationController: MedicationController?
     var medication: Medication?
-
+    
     @IBOutlet weak var instructionsTextField: UITextView!
     
     override func viewDidLoad() {
@@ -38,10 +38,10 @@ class AddDetailViewController: UIViewController {
     private func clicked(button: UIButton) -> Bool {
         let wasClicked: Bool
         if button.isSelected == true {
-                   wasClicked = true
-               } else {
-                   wasClicked = false
-               }
+            wasClicked = true
+        } else {
+            wasClicked = false
+        }
         return wasClicked
     }
     
@@ -61,13 +61,13 @@ class AddDetailViewController: UIViewController {
         
         
         if let medication = medication {
-            
+            medicationController?.update(medication, medName: name, medInstruction: instructions, medPillCount: number, takenSunday: sunday, takenMonday: monday, takenTuesday: tuesday, takenWednesday: wednesday, takenThursday: thursday, takenFriday: friday, takenSaturday: saturday)
         } else {
             medicationController?.create(medName: name, medInstruction: instructions, medPillCount: number, takenSunday: sunday, takenMonday: monday, takenTuesday: tuesday, takenWednesday: wednesday, takenThursday: thursday, takenFriday: friday, takenSaturday: saturday)
         }
         navigationController?.popViewController(animated: true)
     }
-
+    
     
     
     @IBAction func sundayTapped(_ sender: UIButton) {
@@ -143,7 +143,7 @@ class AddDetailViewController: UIViewController {
     }
     
     
-     func updateViews() {
+    func updateViews() {
         if let medication = medication {
             medicationName.text = medication.name
             numberofPills.text = String(medication.pillCount)
@@ -178,13 +178,13 @@ class AddDetailViewController: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

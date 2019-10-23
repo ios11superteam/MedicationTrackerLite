@@ -10,4 +10,5 @@ import Foundation
 
 protocol MedicationTableViewDelegate {
     func hasBeenTaken(for cell: MedicationTableViewCell)
+    
 }

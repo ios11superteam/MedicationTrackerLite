@@ -39,7 +39,7 @@ class MedicationTableViewCell: UITableViewCell {
     
     @IBAction func takenButtonTapped(_ sender: UIButton) {
         delegate?.hasBeenTaken(for: self)
-    }
+        }
 }
     
 

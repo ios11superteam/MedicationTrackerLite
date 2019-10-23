@@ -18,6 +18,8 @@ class MedicationController {
         getToday()
     }
     
+//    var userDate = UserDefaults.standard.set(Date(), forKey: "DateKey")
+    
     var sundaySelected: [Medication] {
         return medications.filter { $0.takenSunday == true}
     }
@@ -53,12 +55,29 @@ class MedicationController {
     }
         
     func update(_ medication: Medication, medName: String, medInstruction: String, medPillCount: Int, takenSunday: Bool, takenMonday: Bool, takenTuesday: Bool, takenWednesday: Bool, takenThursday: Bool, takenFriday: Bool, takenSaturday: Bool) {
-            
-        }
+          guard let index = medications.firstIndex(of: medication) else { return }
+          medications[index].name = medName
+          medications[index].pillCount = medPillCount
+          medications[index].medicationInstructions = medInstruction
+          medications[index].takenSunday = takenSunday
+          medications[index].takenMonday = takenMonday
+          medications[index].takenTuesday = takenTuesday
+          medications[index].takenWednesday = takenWednesday
+          medications[index].takenThursday = takenThursday
+          medications[index].takenFriday = takenFriday
+          medications[index].takenSaturday = takenSaturday
+          saveToPersistentStore()
+              
+          }
     
     func updateHasBeenTaken(for medication: Medication) {
         if let index = medications.firstIndex(of: medication) {
-            medications[index].hasBeenTaken.toggle()
+            if medications[index].hasBeenTaken == false {
+                medications[index].hasBeenTaken.toggle()
+                medications[index].pillCount -= 1
+            } else {
+                medications[index].hasBeenTaken.toggle()
+            }
             saveToPersistentStore()
         }
     }
