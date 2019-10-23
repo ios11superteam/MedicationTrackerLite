@@ -9,6 +9,8 @@
 import UIKit
 
 class MedicationTableViewController: UITableViewController, MedicationTableViewDelegate {
+   
+    
     func hasBeenTaken(for cell: MedicationTableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         let medication = medicationFor(indexPath)
@@ -16,8 +18,9 @@ class MedicationTableViewController: UITableViewController, MedicationTableViewD
         tableView.reloadData()
     }
     
+    var deleteMedIndexPath: IndexPath? = nil
     
-    let medicationController = MedicationController()
+    var medicationController = MedicationController()
 
     override func viewDidLoad() {
         let defaults = UserDefaults.standard
@@ -38,27 +41,9 @@ class MedicationTableViewController: UITableViewController, MedicationTableViewD
     
     func medicationFor( _ indexPath: IndexPath) -> Medication {
         if indexPath.section == 0 {
-            switch medicationController.today {
-            case "Sunday":
-                return medicationController.sundaySelected[indexPath.row]
-            case "Monday":
-                return medicationController.mondaySelected[indexPath.row]
-            case "Tuesday":
-                return medicationController.tuesdaySelected[indexPath.row]
-            case "Wednesday":
-                return medicationController.wednesdaySelected[indexPath.row]
-            case "Thursday":
-                return medicationController.thursdaySelected[indexPath.row]
-            case "Friday":
-                return medicationController.fridaySelected[indexPath.row]
-            case "Saturday":
-                return medicationController.saturdaySelected[indexPath.row]
-            default:
-                return medicationController.medications[0]
-            }
-            
-        } else {
-            return medicationController.medications[indexPath.row]
+            return medicationController.todaysMedications[indexPath.row]
+    } else {
+            return medicationController.restOfMedications[indexPath.row]
         }
     }
 
@@ -70,27 +55,9 @@ class MedicationTableViewController: UITableViewController, MedicationTableViewD
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            switch medicationController.today {
-            case "Sunday":
-                return medicationController.sundaySelected.count
-            case "Monday":
-                return medicationController.mondaySelected.count
-            case "Tuesday":
-                return medicationController.tuesdaySelected.count
-            case "Wednesday":
-                return medicationController.wednesdaySelected.count
-            case "Thursday":
-                return medicationController.thursdaySelected.count
-            case "Friday":
-                return medicationController.fridaySelected.count
-            case "Saturday":
-                return medicationController.saturdaySelected.count
-            default:
-                return 0
-            }
-       
+            return medicationController.todaysMedications.count
         } else {
-            return medicationController.medications.count
+            return medicationController.restOfMedications.count
         }
     }
 
@@ -113,6 +80,23 @@ class MedicationTableViewController: UITableViewController, MedicationTableViewD
             return "All Medications"
         }
     }
+    
+//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        if editingStyle == .delete {
+//            if indexPath.section == 0 {
+//
+//            } else {
+//
+//            }
+//            let medToDelete = medicationController.medications[indexPath.row]
+//            medicationController.delete(medication: medToDelete)
+//
+//
+////            tableView.deleteRows(at: [indexPath], with: .fade)
+////
+////            medicationController.delete(medicationFor(indexPath))
+//        }
+//    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -168,4 +152,6 @@ class MedicationTableViewController: UITableViewController, MedicationTableViewD
         }
         
     }
+    
+    
 }

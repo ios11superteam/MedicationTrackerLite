@@ -23,6 +23,7 @@ class MedicationTableViewCell: UITableViewCell {
         }
     }
     
+    
     func updateViews() {
         guard let medication = medication else { return }
         medicationNameLabel.text = medication.name
@@ -39,7 +40,7 @@ class MedicationTableViewCell: UITableViewCell {
     
     @IBAction func takenButtonTapped(_ sender: UIButton) {
         delegate?.hasBeenTaken(for: self)
-        }
+    }
 }
     
 

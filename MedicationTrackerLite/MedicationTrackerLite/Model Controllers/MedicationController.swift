@@ -18,39 +18,52 @@ class MedicationController {
     var today: String {
         getToday()
     }
-    
-//    var userDateExists = UserDefaults.standard.bool(forKey: "DateKey")
-    
-    var sundaySelected: [Medication] {
-        return medications.filter { $0.takenSunday == true}
+
+    var todaysMedications: [Medication] {
+        switch today {
+        case "Sunday":
+            return medications.filter { $0.takenSunday == true}
+        case "Monday":
+            return medications.filter { $0.takenMonday == true}
+        case "Tuesday":
+            return medications.filter { $0.takenTuesday == true}
+        case "Wednesday":
+            return medications.filter { $0.takenWednesday == true}
+        case "Thursday":
+            return medications.filter { $0.takenThursday == true}
+        case "Friday":
+            return medications.filter { $0.takenFriday == true}
+        case "Saturday":
+            return medications.filter { $0.takenSaturday == true}
+        default:
+            return []
+        }
     }
-    var mondaySelected: [Medication] {
-        return medications.filter { $0.takenMonday == true}
+    var restOfMedications: [Medication] {
+        switch today {
+        case "Sunday":
+            return medications.filter { $0.takenSunday == false}
+        case "Monday":
+            return medications.filter { $0.takenMonday == false}
+        case "Tuesday":
+            return medications.filter { $0.takenTuesday == false}
+        case "Wednesday":
+            return medications.filter { $0.takenWednesday == false}
+        case "Thursday":
+            return medications.filter { $0.takenThursday == false}
+        case "Friday":
+            return medications.filter { $0.takenFriday == false}
+        case "Saturday":
+            return medications.filter { $0.takenSaturday == false}
+        default:
+            return []
+        }
     }
-    var tuesdaySelected: [Medication] {
-        return medications.filter { $0.takenTuesday == true}
-    }
-    var wednesdaySelected: [Medication] {
-        return medications.filter { $0.takenWednesday == true}
-    }
-    var thursdaySelected: [Medication] {
-        return medications.filter { $0.takenThursday == true}
-    }
-    var fridaySelected: [Medication] {
-        return medications.filter { $0.takenFriday == true}
-    }
-    var saturdaySelected: [Medication] {
-        return medications.filter { $0.takenSaturday == true}
-    }
-    
+
     init() {
-//        if userDateExists {
-           loadFromPersistenceStore()
-//        } else {
-//            getToday()
-//            UserDefaults.standard.set((true), forKey: "DateKey")
-//            saveToPersistentStore()
-//        }
+        
+            loadFromPersistenceStore()
+            
        }
     // MARK: - Methods:
     
@@ -62,20 +75,27 @@ class MedicationController {
     }
         
     func update(_ medication: Medication, medName: String, medInstruction: String, medPillCount: Int, takenSunday: Bool, takenMonday: Bool, takenTuesday: Bool, takenWednesday: Bool, takenThursday: Bool, takenFriday: Bool, takenSaturday: Bool) {
-          guard let index = medications.firstIndex(of: medication) else { return }
-          medications[index].name = medName
-          medications[index].pillCount = medPillCount
-          medications[index].medicationInstructions = medInstruction
-          medications[index].takenSunday = takenSunday
-          medications[index].takenMonday = takenMonday
-          medications[index].takenTuesday = takenTuesday
-          medications[index].takenWednesday = takenWednesday
-          medications[index].takenThursday = takenThursday
-          medications[index].takenFriday = takenFriday
-          medications[index].takenSaturday = takenSaturday
-          saveToPersistentStore()
-              
+        guard let index = medications.firstIndex(of: medication) else { return }
+        medications[index].name = medName
+        medications[index].pillCount = medPillCount
+        medications[index].medicationInstructions = medInstruction
+        medications[index].takenSunday = takenSunday
+        medications[index].takenMonday = takenMonday
+        medications[index].takenTuesday = takenTuesday
+        medications[index].takenWednesday = takenWednesday
+        medications[index].takenThursday = takenThursday
+        medications[index].takenFriday = takenFriday
+        medications[index].takenSaturday = takenSaturday
+        saveToPersistentStore()
+            
+        }
+    
+    func delete(medication: Medication) {
+          if let index = medications.firstIndex(of: medication) {
+              medications.remove(at: index)
           }
+          saveToPersistentStore()
+      }
     
     func updateHasBeenTaken(for medication: Medication) {
         if let index = medications.firstIndex(of: medication) {
@@ -88,11 +108,6 @@ class MedicationController {
             saveToPersistentStore()
         }
     }
-    
-    func resetHasBeenTaken(for medication: Medication) {
-        
-    }
-    
     // MARK: - Persistence
     
     private var medicationListURL: URL? {
@@ -167,10 +182,12 @@ class MedicationController {
         }
     
     }
-
+    
     func resetDay() {
         for index in medications.indices {
             medications[index].hasBeenTaken = false
         }
     }
+    
+    
 }
