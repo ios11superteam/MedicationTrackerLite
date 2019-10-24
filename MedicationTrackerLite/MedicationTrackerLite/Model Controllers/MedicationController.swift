@@ -14,7 +14,10 @@ class MedicationController {
     
     var delegate: MedicationTableViewController?
     
-    var medications: [Medication] = [] 
+    var medications: [Medication] = []
+    
+    var dayExist = UserDefaults.standard.bool(forKey: "Day")
+
     
 
 // For hardcoding a date, presenting purposes only.
@@ -75,7 +78,12 @@ class MedicationController {
     
     // Initializes the controller with data previously saved to the Persistence store.
     init() {
+        if dayExist {
             loadFromPersistenceStore()
+        }
+        else {
+            UserDefaults.standard.set(true, forKey: "Day")
+        }
        }
     
     

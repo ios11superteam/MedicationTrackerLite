@@ -16,23 +16,6 @@ class MedicationTableViewController: UITableViewController, MedicationTableViewD
     
     // MARK: - Methods:
     
-    // Using the inputted cell, this gets its respective medication and updates its hasBeenTaken property.
-    func hasBeenTaken(for cell: MedicationTableViewCell) {
-        guard let indexPath = tableView.indexPath(for: cell) else { return }
-        let medication = medicationFor(indexPath)
-        medicationController.updateHasBeenTaken(for: medication)
-        tableView.reloadData()
-    }
-    
-    // Finds the specific medication relative to the cells indexPath.
-    func medicationFor( _ indexPath: IndexPath) -> Medication {
-        if indexPath.section == 0 {
-            return medicationController.todaysMedications[indexPath.row]
-        } else {
-            return medicationController.restOfMedications[indexPath.row]
-        }
-    }
-    
     // Runs once view loads. Sets the day in user defaults and sets the controllers delegate to itself.
     override func viewDidLoad() {
         let defaults = UserDefaults.standard
@@ -51,6 +34,25 @@ class MedicationTableViewController: UITableViewController, MedicationTableViewD
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
+    
+    // Using the inputted cell, this gets its respective medication and updates its hasBeenTaken property.
+    func hasBeenTaken(for cell: MedicationTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        let medication = medicationFor(indexPath)
+        medicationController.updateHasBeenTaken(for: medication)
+        tableView.reloadData()
+    }
+    
+    // Finds the specific medication relative to the cells indexPath.
+    func medicationFor( _ indexPath: IndexPath) -> Medication {
+        if indexPath.section == 0 {
+            return medicationController.todaysMedications[indexPath.row]
+        } else {
+            return medicationController.restOfMedications[indexPath.row]
+        }
+    }
+    
+
     
     // MARK: - Table view data source
     
