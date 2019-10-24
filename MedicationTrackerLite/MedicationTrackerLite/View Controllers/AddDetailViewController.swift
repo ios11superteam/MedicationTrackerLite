@@ -9,6 +9,8 @@
 import UIKit
 
 class AddDetailViewController: UIViewController {
+    
+    // MARK: - Properties:
 
     @IBOutlet weak var medicationName: UITextField!
     
@@ -23,23 +25,29 @@ class AddDetailViewController: UIViewController {
     @IBOutlet weak var fridayButton: UIButton!
     @IBOutlet weak var saturdayButton: UIButton!
 
+    
     var medicationController: MedicationController?
     var medication: Medication?
 
     @IBOutlet weak var instructionsTextField: UITextView!
     
+    
+    // MARK: - Methods:
+
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
         // Do any additional setup after loading the view.
     }
     
+    // viewWillDisappear is the method where the viewController goes away no matter how (whether through a back button, or a save button)
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         save()
     }
     
     
+        // the higher level method that changes the boolean value of each day
     private func clicked(button: UIButton) -> Bool {
         let wasClicked: Bool
         if button.isSelected == true {
@@ -51,12 +59,13 @@ class AddDetailViewController: UIViewController {
     }
     
     
+        // Because our save method is in the viewWillDisappear, we only need to make this IBAction pop back to the rootViewController, which will cause the vWD func to occur
     @IBAction func savebuttonTapped(_ sender: UIBarButtonItem) {
         navigationController?.popToRootViewController(animated: true)
     }
 
     
-    
+    // For each day, we have created the abiliy to change the "checkmark" image based on the value of that button.
     @IBAction func sundayTapped(_ sender: UIButton) {
         sender.isSelected.toggle()
         if sender.isSelected == true {
@@ -130,6 +139,7 @@ class AddDetailViewController: UIViewController {
     }
     
     
+    // This unwraps the textfield values and changes the medication.takenXday value by calling the respective day UIButton
      func updateViews() {
         if let medication = medication {
             medicationName.text = medication.name
@@ -160,6 +170,7 @@ class AddDetailViewController: UIViewController {
         }
     }
     
+        // Using our higher level clicked method, we call in each days's value to actually change the boolean value of each day.
     func save() {
         guard let name = medicationName.text, !name.isEmpty else { return }
         guard let numberString = numberofPills.text, !numberString.isEmpty else { return }
@@ -173,6 +184,8 @@ class AddDetailViewController: UIViewController {
         let friday = clicked(button: fridayButton)
         let saturday = clicked(button: saturdayButton)
         
+        
+        // Over here, we pass in that information dependent on whether the medication has been created, or is being updated.
         if let medication = medication {
             medicationController?.update(medication, medName: name, medInstruction: instructions, medPillCount: number, takenSunday: sunday, takenMonday: monday, takenTuesday: tuesday, takenWednesday: wednesday, takenThursday: thursday, takenFriday: friday, takenSaturday: saturday)
         } else {

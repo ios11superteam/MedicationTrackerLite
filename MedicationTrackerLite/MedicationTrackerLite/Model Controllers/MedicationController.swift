@@ -10,14 +10,21 @@ import Foundation
 
 class MedicationController {
     
+    // MARK: - Properties:
+    
     var delegate: MedicationTableViewController?
     
     var medications: [Medication] = [] 
     
-//    var today = "Thursday"
+
+// For hardcoding a date, presenting purposes only.
+// var today = "Saturday"
+    
     var today: String {
         getToday()
     }
+
+    // An array of the medications used based on which day it is.
 
     var todaysMedications: [Medication] {
         switch today {
@@ -39,6 +46,9 @@ class MedicationController {
             return []
         }
     }
+    
+    // An array of medications NOT used based on which day it is.
+    
     var restOfMedications: [Medication] {
         switch today {
         case "Sunday":
@@ -60,20 +70,26 @@ class MedicationController {
         }
     }
 
-    init() {
-        
-            loadFromPersistenceStore()
-            
-       }
+
     // MARK: - Methods:
     
+    // Initializes the controller with data previously saved to the Persistence store.
+    init() {
+            loadFromPersistenceStore()
+       }
+    
+    
+    // Creates a new medication and adds it to the medications array
     func create(medName: String, medInstruction: String, medPillCount: Int, takenSunday: Bool, takenMonday: Bool, takenTuesday: Bool, takenWednesday: Bool, takenThursday: Bool, takenFriday: Bool, takenSaturday: Bool) {
         let medication = Medication(name: medName, medicationInstructions: medInstruction, pillCount: medPillCount, takenSunday: takenSunday, takenMonday: takenMonday, takenTuesday: takenTuesday, takenWednesday: takenWednesday, takenThursday: takenThursday, takenFriday: takenFriday, takenSaturday: takenSaturday)
         medications.append(medication)
         saveToPersistentStore()
         delegate?.tableView.reloadData()
     }
-        
+    
+    
+        // Takes the info inputted into the DetailAddVC and updates the medication based on the new info.
+        // Used when updating the info of a medication.
     func update(_ medication: Medication, medName: String, medInstruction: String, medPillCount: Int, takenSunday: Bool, takenMonday: Bool, takenTuesday: Bool, takenWednesday: Bool, takenThursday: Bool, takenFriday: Bool, takenSaturday: Bool) {
         guard let index = medications.firstIndex(of: medication) else { return }
         medications[index].name = medName
@@ -87,9 +103,9 @@ class MedicationController {
         medications[index].takenFriday = takenFriday
         medications[index].takenSaturday = takenSaturday
         saveToPersistentStore()
-            
         }
     
+     // Deletes a medication from the medications array. Used when swipe deleting a cell.
     func delete(medication: Medication) {
           if let index = medications.firstIndex(of: medication) {
               medications.remove(at: index)
@@ -97,6 +113,7 @@ class MedicationController {
           saveToPersistentStore()
       }
     
+    // This takes a medication and changes its hasBeenTaken state based on parameters such as previous state and pill count.
     func updateHasBeenTaken(for medication: Medication) {
         if let index = medications.firstIndex(of: medication) {
             if medications[index].hasBeenTaken == false {
@@ -147,6 +164,7 @@ class MedicationController {
     
     // MARK: - Helper Methods
 
+    // Gets todays Date in MM-dd-yyyy format using Date Formatter
     func todaysDate() -> String {
         let date = Date()
         let format = DateFormatter()
@@ -155,6 +173,8 @@ class MedicationController {
         let formattedDate = format.string(from: date)
         return formattedDate
      }
+    
+    // Returns the day of the week as an Int based on the MM-dd-yyyy date inputted. (Sund = 1, Mon = 2 etc.)
     func getDayOfWeek(_ today:String) -> Int? {
         let formatter  = DateFormatter()
         formatter.dateFormat = "MM-dd-yyyy"
@@ -164,7 +184,9 @@ class MedicationController {
         let weekDay = myCalendar.component(.weekday, from: todayDate)
         return weekDay
     }
-
+    
+    // Uses the above two functions to get the current day of the week as an Int.
+    // Then switches on the Int to return the day as a string
     func getToday() -> String {
        let today = todaysDate()
         let numberDay = getDayOfWeek(today)
@@ -187,6 +209,8 @@ class MedicationController {
     
     }
     
+    // Calling this function will set all medications to their default hasBeenTaken state (false).
+    // Used when the day changes to reset the "taken" box.
     func resetDay() {
         for index in medications.indices {
             medications[index].hasBeenTaken = false
