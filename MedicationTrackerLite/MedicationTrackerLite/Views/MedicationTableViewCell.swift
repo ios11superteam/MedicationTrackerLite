@@ -51,15 +51,19 @@ class MedicationTableViewCell: UITableViewCell {
         } else {
             pillCountLabel.textColor = .gray
         }
-        if medication.pillCount == 5 || medication.pillCount == 1 {
-            refillAlert()
-        }
+
 
     }
     
     // Runs the hasBeenTaken function in the TableVC via delegate.
     @IBAction func takenButtonTapped(_ sender: UIButton) {
+        guard let medication = medication else { return }
         delegate?.hasBeenTaken(for: self)
+        
+            if medication.pillCount == 6 || medication.pillCount == 2 {
+                   refillAlert()
+               }
+        
     }
     
     // Sends an alert warning the user that their medication is low or empty.
