@@ -22,7 +22,7 @@ class MedicationTableViewController: UITableViewController, MedicationTableViewD
         defaults.set(medicationController.today, forKey: "day")
         super.viewDidLoad()
         medicationController.delegate = self
-    }
+        }
     
     // Runs before the view will appear. Compares current day to saved day in order to run resetDay() method.
     override func viewWillAppear(_ animated: Bool) {
@@ -79,6 +79,7 @@ class MedicationTableViewController: UITableViewController, MedicationTableViewD
         cell.medication = medication
         cell.delegate = self
         cell.refillDelegate = self
+        
         return cell
     }
     

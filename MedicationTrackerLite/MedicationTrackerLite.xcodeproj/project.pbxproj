@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B238286235E516800299F21 /* Medication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B238285235E516800299F21 /* Medication.swift */; };
+		4BA8CB512362605300A6559B /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BA8CB502362605300A6559B /* InfoViewController.swift */; };
 		4BAE2E66235F6435003264B1 /* MedicationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAE2E65235F6435003264B1 /* MedicationTableViewController.swift */; };
 		9569B607235F966C004900FF /* MedicationTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9569B606235F966C004900FF /* MedicationTableViewDelegate.swift */; };
 		95F8984E235E196000FDC080 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F8984D235E196000FDC080 /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		4B238285235E516800299F21 /* Medication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medication.swift; sourceTree = "<group>"; };
+		4BA8CB502362605300A6559B /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		4BAE2E65235F6435003264B1 /* MedicationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTableViewController.swift; sourceTree = "<group>"; };
 		9569B606235F966C004900FF /* MedicationTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicationTableViewDelegate.swift; sourceTree = "<group>"; };
 		95F8984A235E196000FDC080 /* MedicationTrackerLite.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedicationTrackerLite.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				95F8988A235E55B500FDC080 /* AddDetailViewController.swift */,
+				4BA8CB502362605300A6559B /* InfoViewController.swift */,
 				4BAE2E65235F6435003264B1 /* MedicationTableViewController.swift */,
 			);
 			path = "View Controllers";
@@ -318,6 +321,7 @@
 				4B238286235E516800299F21 /* Medication.swift in Sources */,
 				95F8988E235E562B00FDC080 /* MedicationTableViewCell.swift in Sources */,
 				95F8988B235E55B500FDC080 /* AddDetailViewController.swift in Sources */,
+				4BA8CB512362605300A6559B /* InfoViewController.swift in Sources */,
 				95F89885235E552100FDC080 /* MedicationController.swift in Sources */,
 				9569B607235F966C004900FF /* MedicationTableViewDelegate.swift in Sources */,
 				4BAE2E66235F6435003264B1 /* MedicationTableViewController.swift in Sources */,

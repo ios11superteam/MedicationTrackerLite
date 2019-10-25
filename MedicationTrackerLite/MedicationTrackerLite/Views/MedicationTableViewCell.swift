@@ -19,6 +19,8 @@ class MedicationTableViewCell: UITableViewCell {
     @IBOutlet weak var pillCountLabel: UILabel!
     @IBOutlet weak var takenButton: UIButton!
     
+    
+    
     // Updates the outlets when a medication is set.
     var medication: Medication? {
         didSet {
@@ -29,6 +31,7 @@ class MedicationTableViewCell: UITableViewCell {
     // MARK: - Methods:
     
     // Sets the outlets with the info from an eligible medication passed in from the TableVC.
+    
     func updateViews() {
         guard let medication = medication else { return }
         medicationNameLabel.text = medication.name
@@ -46,11 +49,12 @@ class MedicationTableViewCell: UITableViewCell {
             pillCountLabel.textColor = .red
             
         } else {
-            pillCountLabel.textColor = .black
+            pillCountLabel.textColor = .gray
         }
         if medication.pillCount == 5 || medication.pillCount == 1 {
             refillAlert()
         }
+
     }
     
     // Runs the hasBeenTaken function in the TableVC via delegate.
